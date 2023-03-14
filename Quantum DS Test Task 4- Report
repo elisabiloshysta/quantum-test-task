@@ -1,0 +1,38 @@
+@Solution Report
+
+First things first, I should mention that I was following the guide on Medium that you left me as a hint (https://medium.datadriveninvestor.com/preparing-aerial-imagery-for-crop-classification-ce05d3601c68)
+
+Though I've read university materials about object detection in ML, this was my first time working with geospatial analysis. It was not only quite challenging but also extremely interesting to dig deeper into new libriries(rasterio) and their methods. Knowing that detecting soil erosion is an important task for environmental management, I understand the importance of the work you are doing in Quantoum. 
+
+I can highlight the main steps of the work I've done:
+    1. Read the jp2 data and metadata and the jp2 data's shape.
+    2. Visualized the data by plotting an image in matplotlib.
+     3. Examine the shp mask and the printed features (labels).
+    4. Tried to cut fields from Raster. (FAILED)
+    5. Assigned CRS, the train_geo_df is now properly georeferenced (using projfinder.com and point(x,y) from the coordinates array).
+    6. Tried to cut fields from Raster again, and it performed almost 2 times better (~50% of the data was masked).
+    7. Plotted the mask using shapely.ops unary_union
+    8. Saved binary mask with converted binary values to 8-bit integer values (0 or 255)
+    
+    Done)
+
+Unfortunately, I didn't manage to build a proper classification model for the given data, but I'm really grateful for the experience I've gained and hope to manage such a task in the near future. 
+
+
+Here are my proposals for how to solve problems in the most effective way.
+
+As far as I can see, Quantum already uses deep learning and geospatial analysis. I think that using remote sensing tools can be beneficial for the problem of detecting soil erosion.
+
+    Remote sensing is a powerful tool for soil erosion detection because it allows for the collection of spatial and temporal data over large areas. One approach is to use satellite imagery to detect changes in land cover and soil moisture, which can be indicators of soil erosion. For example, Kiani et al. (2020) used a combination of Landsat and Sentinel-2 imagery to monitor land cover changes in a mountainous region of Iran, and found that the Normalized Difference Vegetation Index (NDVI) and the Modified Soil-Adjusted Vegetation Index (MSAVI) were effective in detecting soil erosion.
+
+Soil erosion detection is a complex problem that requires a multi-disciplinary approach. Remote sensing, machine learning, and geospatial analysis are all valuable tools for this task, but their combination can provide a more accurate and comprehensive assessment of soil erosion. 
+
+Sources:
+
+Kiani, B., Arzani, H., & Hosseini, M. (2020). Land cover change detection using remote sensing and GIS techniques in a mountainous area, Iran. Journal of Mountain Science, 17(9), 2211–2226.
+
+
+
+
+
+
